@@ -1,0 +1,45 @@
+.review-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .review-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .review-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .review-item div {
+    margin-bottom: 10px;
+  }
+  
+  .review-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .review-item button:hover {
+    background-color: #c82333;
+  }
+  
+  @media (max-width: 768px) {
+    .review-container {
+      padding: 10px;
+    }
+  }
+  

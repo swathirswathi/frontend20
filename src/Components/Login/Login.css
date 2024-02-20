@@ -1,0 +1,74 @@
+
+/*Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.login-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/images/car6.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0; 
+}
+
+  .login-box {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-box button {
+    background-color:#fe5b3d;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: calc(120% - 120px); /* Adjust input width */
+}
+
+  
+  h1{
+    font-size: 50px ;
+    color: orange;
+    font-family: "Protest Revolution", sans-serif;
+  }
+
+  .login-box {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333; 
+    margin-bottom: 5px; /* Adjust margin as needed */
+  }
+  
+  .form-control {
+    width: calc(120% - 120px); /* Adjust input width */
+  }
+
+  /* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .container {
+      background-size: contain;
+      background-position: top;
+    }
+}

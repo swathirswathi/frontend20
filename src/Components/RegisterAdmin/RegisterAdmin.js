@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './RegisterAdmin.css';
+import { Link } from 'react-router-dom';
 
 
 function RegisterAdmin(){
@@ -82,6 +83,7 @@ function RegisterAdmin(){
                       </select>
                   </div>
                   <button onClick={register} className="btn btn-primary" type="button">Register</button>
+                  <Link to="/login" >Already Registered? Login</Link>
               </form>
               {/* <div class="links">
               <a href="signin.html">Already have an account?Log in</a>

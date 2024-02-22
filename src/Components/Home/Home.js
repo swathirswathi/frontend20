@@ -1,26 +1,38 @@
 import React, { useState }  from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
 
 function Home() {
-
-    const [cars1, setCars1] = useState([]);
+    const navigate = useNavigate(); // Initialize useNavigate hook
+   // const [cars1, setCars1] = useState([]);
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
-    const fetchCarsByDate = () => {
-        if (!startDate || !endDate) {
-            console.error('Please enter both start date and end date.');
-            return;
-        }
+    // const fetchCarsByDate = () => {
+    //     if (!startDate || !endDate) {
+    //         console.error('Please enter both start date and end date.');
+    //         return;
+    //     }
 
-        fetch(`http://localhost:5260/api/Car/user/cars/available/Dates?startDate=${startDate}&endDate=${endDate}`)
-            .then(res => res.json())
-            .then(data => {
-                setCars1(data);
-            })
-            .catch(err => console.error('Error fetching cars:', err));
-    };
+    //     fetch(`http://localhost:5260/api/Car/user/cars/available/Dates?startDate=${startDate}&endDate=${endDate}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setCars1(data);
+    //         })
+    //         .catch(err => console.error('Error fetching cars:', err));
+    // };
+
+    const handleSearch = () => {
+        // Ensure both start and end dates are provided
+        if (!startDate || !endDate) {
+          alert('Please select both pickup and drop-off dates.');
+          return;
+        }
+    
+        // Navigate to search result page with selected dates as query parameters
+        navigate(`/search-result?startDate=${startDate}&endDate=${endDate}`);
+      };
 
 
     const handleStartDateChange = (e) => {
@@ -44,14 +56,14 @@ function Home() {
                 <form action="">
                     <div className="input-box">
                         <span>Pick-Up Date</span>
-                        <input type="date" id="startDate" value={startDate} onChange={handleStartDateChange} />
+                        <input type="date" id="pickupDate" value={startDate} onChange={handleStartDateChange} />
                     </div>
                     <div className="input-box">
                         <span>Return Date</span>
                         <input type="date" id="endDate" value={endDate} onChange={handleEndDateChange} />
                     </div>
-                    <button onClick={fetchCarsByDate} className='btn btn-primary' type='button'>Search</button>
-                <div>
+                    <button onClick={handleSearch} className='btn btn-primary' type='button'>Search</button>
+                {/* <div>
                     {cars1.length > 0 ?
                         <div>
                             <h2>Available Cars:</h2>
@@ -80,7 +92,7 @@ function Home() {
                         :
                         <p></p>
                     }
-                </div>
+                </div> */}
                 </form>
             </div>
         </section>

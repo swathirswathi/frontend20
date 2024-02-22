@@ -59,6 +59,11 @@ import Menu from './Components/Menu/Menu';
 import RegisterUser from './Components/RegisterUser/RegisterUser'
 import RegisterAdmin from './Components/RegisterAdmin/RegisterAdmin'
 import Login from './Components/Login/Login';
+import SearchResult from './Components/SearchResult/SearchResult';
+import CarDetails from './Components/CarDetails/CarDetails';
+import Reservation from './Components/Reservation/Reservation';
+import Payment from './Components/Payment/Payment';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -75,6 +80,12 @@ function App() {
           <Route path='/registeruser' element={<RegisterUser />} />
           <Route path='/registeradmin' element={<RegisterAdmin />} />
           <Route path='/login' element={<Login />} />
+          <Route path="/search-result" element={<SearchResult />} />
+          <Route path="/car-details/:carId" element={<CarDetails/>} />
+          <Route element={<PrivateRoute/>}>
+          <Route path="/reservation" element={<Reservation/>} />
+          </Route>
+          <Route path="/payment" element={<Payment/>}/>
         </Routes>
       </div>
     </Router>

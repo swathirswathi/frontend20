@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import './RegisterUser.css';
+import { Link } from 'react-router-dom';
 
 function RegisterUser(){
     const [firstName, setFirstName] = useState("");
@@ -83,6 +84,7 @@ function RegisterUser(){
                         </select>
                     </div>
                     <button onClick={register} className="btn btn-primary" type="button">Register</button>
+                    <Link to="/login">Already Registered? Login</Link>
                 </form>
                  {/* Success Popup */}
                  {showSuccessPopup && (

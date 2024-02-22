@@ -58,8 +58,8 @@ function Menu() {
         <li><Link to="/reviews">Reviews</Link></li>
       </ul>
       <div className="header-btn">
-        <Link to="/registeruser" className="sign-up">RegisterUser</Link>
-        <Link to="/registeradmin" className="sign-up">RegisterAdmin</Link>
+        {/* <Link to="/registeruser" className="sign-up">RegisterUser</Link>
+        <Link to="/registeradmin" className="sign-up">RegisterAdmin</Link> */}
         <Link to="/login" className="sign-in">Login</Link>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './CarServices.css';
 
 function CarServices() {
@@ -35,6 +35,14 @@ function CarServices() {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
+    useEffect(()=>{
+         fetch("http://localhost:5260/api/Car/admin/cars/GetCarsList")
+        .then(res => res.json()) //converting to json//success
+        .then(res => {
+            setCars(res);
+        },[])
+        .catch(err => console.log(err));//error
+    })
 
     var fetchClick = () => fetch("http://localhost:5260/api/Car/admin/cars/GetCarsList")
         .then(res => res.json()) //converting to json//success
@@ -113,7 +121,7 @@ function CarServices() {
         <div>
             <div>
                 <h1 className='carTitle'> Cars of the day</h1>
-                <button onClick={fetchClick} className='btn btn-primary'>GetCars</button>
+                {/* <button onClick={fetchClick} className='btn btn-primary'>GetCars</button> */}
                 <div class="heading">
                         <span>Best Services</span>
                         <h1>Explore Out Top Deals <br /> From Top Rated Dealers</h1>
@@ -161,7 +169,7 @@ function CarServices() {
 
                        
             </div>
-
+{/* 
             <div>
                 <button onClick={fetchClick2} className='btn btn-primary'>GetAllAvailableCars</button>
                 {cars2.map((car) =>
@@ -266,7 +274,7 @@ function CarServices() {
                         Availability: {carById1.availability ? "Available" : "Not Available"}
                     </div>
                 }
-            </div>
+            </div> */}
 
         </div>
     )

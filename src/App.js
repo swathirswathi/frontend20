@@ -82,9 +82,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path="/search-result" element={<SearchResult />} />
           <Route path="/car-details/:carId" element={<CarDetails/>} />
-          <Route element={<PrivateRoute/>}>
-          <Route path="/reservation" element={<Reservation/>} />
-          </Route>
+          <Route path="/reservation" element={<PrivateRoute component={Reservation} />} />
           <Route path="/payment" element={<Payment/>}/>
         </Routes>
       </div>
